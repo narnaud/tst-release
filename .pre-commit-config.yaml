@@ -17,15 +17,6 @@ repos:
         args: [--allow-multiple-documents]
       - id: pretty-format-json
         args: [--autofix, --no-sort-keys, --indent=4]
-  - repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: v17.0.5
-    hooks:
-      - id: clang-format
-  - repo: https://github.com/cheshirekow/cmake-format-precommit
-    rev: v0.6.13
-    hooks:
-    - id: cmake-format
-    - id: cmake-lint
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v2.1.1
     hooks:
