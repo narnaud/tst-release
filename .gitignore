@@ -33,3 +33,6 @@
 
 # QtCreator
 CMakeLists.txt.user
+
+.vs
+build-*
