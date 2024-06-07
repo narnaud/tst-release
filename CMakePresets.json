@@ -31,7 +31,7 @@
             "binaryDir": "${sourceDir}/build-ci",
             "generator": "Ninja",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
             }
         }
     ],
