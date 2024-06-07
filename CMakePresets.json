@@ -1,0 +1,60 @@
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "debug",
+            "displayName": "Debug build",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-debug"
+        },
+        {
+            "name": "release",
+            "displayName": "Release build",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "profile",
+            "displayName": "Profile build",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-profile",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+            }
+        },
+        {
+            "name": "ci",
+            "displayName": "CI build",
+            "binaryDir": "${sourceDir}/build-ci",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "ci",
+            "configurePreset": "ci"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "ci",
+            "configurePreset": "ci",
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": true
+            },
+            "environment": {
+                "QT_QPA_PLATFORM": "offscreen"
+            }
+        }
+    ]
+}
