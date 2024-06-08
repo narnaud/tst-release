@@ -31,7 +31,7 @@ jobs:
       - name: Install Qt 6
         uses: jurplel/install-qt-action@v4
         with:
-          version: 6.5.* # 6.5 is the current LTS (as of 2024-06-06)
+          version: 6.7.* # 6.5 is the current LTS (as of 2024-06-06)
           cache: true
 
       - name: Make sure MSVC is found when Ninja generator is in use
